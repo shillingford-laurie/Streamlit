@@ -130,7 +130,7 @@ else:
     # PAGE ANALYSE DES DONNÉES - FLIGHTS
     # =========================================================
 
-    if selected_page == "Analyse des données Flights":
+    if selected_page == "Analyse Flights":
 
         st.title("Analyse des données aériennes")
 
