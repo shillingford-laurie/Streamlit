@@ -115,7 +115,7 @@ else:
         selected_page = option_menu(
             menu_title="Navigation principale",
             options=[
-                "Analyse des données",
+                "Analyse Flights",
                 "Analyse Taxis"
             ],
             icons=[
@@ -130,13 +130,13 @@ else:
     # PAGE ANALYSE DES DONNÉES - FLIGHTS
     # =========================================================
 
-    if selected_page == "Analyse des données":
+    if selected_page == "Analyse des données Flights":
 
-        st.title("Analyse des données")
+        st.title("Analyse des données aériennes")
 
         st.write(
             "Analyse du nombre de passagers aériens "
-            "à partir du dataset Flights."
+            "à partir du dataset Flights effectué par Laurie et Ilyes."
         )
 
 
