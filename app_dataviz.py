@@ -22,6 +22,15 @@ def load_accounts():
 
 
 def authenticate(username_input, password_input):
+
+    # Vérification du compte admin via Streamlit Secrets
+    if (
+        username_input == st.secrets["admin"]["user"]
+        and password_input == st.secrets["admin"]["password"]
+    ):
+        return True
+
+    # Vérification des comptes utilisateurs via accounts.csv
     accounts_df = load_accounts()
 
     user_match = accounts_df[
@@ -30,6 +39,7 @@ def authenticate(username_input, password_input):
     ]
 
     return not user_match.empty
+
 
 
 # Page de connexion
