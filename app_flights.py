@@ -6,7 +6,7 @@ import seaborn as sns
 # Chargement direct du dataset "flights" depuis GitHub 
 @st.cache_data 
 def load_data(): 
-    url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/flights.csv" 
+    url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/refs/heads/master/flights.csv" 
     return pd.read_csv(url) 
 df_flights = load_data()
 
@@ -17,13 +17,13 @@ total_passengers = df_flights["passengers"].sum()
 st.metric(label="Total de passagers historiques", 
 value=f"{total_passengers:,}")
 
-df_flights = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborndata/master/flights.csv")
+df_flights = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/refs/heads/master/flights.csv")
 # Préparation des données : évolution annuelle du total des passagers
 annual_passengers = df_flights.groupby("year")["passengers"].sum()
 st.subheader("Évolution du trafic aérien (Bar Chart natif)")
 st.bar_chart(annual_passengers)
 
-df_iris = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborndata/master/iris.csv")
+df_iris = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/refs/heads/master/iris.csv")
 st.subheader("Distribution par espèce (Seaborn)")
 # 1. Création explicite de la figure
 fig, ax = plt.subplots(figsize=(8, 4))

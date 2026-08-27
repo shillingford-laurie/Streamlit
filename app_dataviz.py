@@ -3,39 +3,9 @@ import pandas as pd
 # Chargement direct du dataset "flights" depuis GitHub 
 @st.cache_data 
 def load_data(): 
-    url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/flights.csv" 
+    url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/refs/heads/master/flights.csv" 
     return pd.read_csv(url) 
 df_flights = load_data()
-
-st.title("Organisation en Colonnes")
-# Création de 3 colonnes de largeur égale
-col1, col2, col3 = st.columns(3)
-with col1:
- st.header("Métrique A")
- st.metric(label="Utilisateurs", value="1,200", delta="+5%")
-with col2:
- st.header("Métrique B")
- st.metric(label="Revenu", value="45 000 €", delta="+12%")
-with col3:
- st.header("Métrique C")
- st.metric(label="Conversion", value="3.2%", delta="-0.4%")
-
-# La colonne 2 sera deux fois plus large que la colonne 1
-col1, col2 = st.columns([1, 2])
-
-st.subheader("Galerie Mascottes (3 images par ligne)")
-# Liste des images d'exemple
-image_urls = [
- "avion.jpg",
- "aeroport.jpg",
- "taxi.jpg"
-]
-
-# Affichage côte à côte sur 3 colonnes
-cols = st.columns(3)
-for index, url in enumerate(image_urls):
- with cols[index % 3]:
-    st.image(url, use_column_width=True, caption=f"Photo {index + 1}")
 
 
 st.subheader("Aperçu des données") 
@@ -45,7 +15,7 @@ total_passengers = df_flights["passengers"].sum()
 st.metric(label="Total de passagers historiques", 
 value=f"{total_passengers:,}")
  
-df_flights = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/master/flights.csv") 
+df_flights = pd.read_csv("https://raw.githubusercontent.com/mwaskom/seaborn-data/refs/heads/master/flights.csv") 
 # Préparation des données : évolution annuelle du total des passagers 
 annual_passengers = df_flights.groupby("year")["passengers"].sum() 
 st.subheader("Évolution du trafic aérien (Bar Chart natif)") 
