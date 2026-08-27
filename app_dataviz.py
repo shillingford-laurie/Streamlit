@@ -35,8 +35,7 @@ image_urls = [
 cols = st.columns(3)
 for index, url in enumerate(image_urls):
  with cols[index % 3]:
-    st.image(url, use_column_width=True, caption=f"Photo {index +
-1}")
+    st.image(url, use_column_width=True, caption=f"Photo {index + 1}")
 
 
 st.subheader("Aperçu des données") 
