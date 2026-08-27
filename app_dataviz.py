@@ -30,6 +30,7 @@ image_urls = [
  "aeroport.jpg",
  "taxi.jpg"
 ]
+
 # Affichage côte à côte sur 3 colonnes
 cols = st.columns(3)
 for index, url in enumerate(image_urls):
